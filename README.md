@@ -27,11 +27,51 @@ Plugin::load('Xety/Cake3Sluggable');
 ```
 In your model `initialize()`:
 ``` php
-$this->addBehavior('Xety/Cake3Sluggable.Sluggable', [
-		'field' => 'username'
-	]
-);
+$this->addBehavior('Xety/Cake3Sluggable.Sluggable');
 ```
+
+To use the custom finder :
+``` php
+$this->Users
+	->find('slug', [
+		'slug' => 'your-slug-here',
+		'slugField' => 'Users.slug'
+	]);
+```
+
+## Configuration
+* ### field
+	Default : `title`
+	
+	The field to slug :
+	``` php
+	$this->addBehavior('Xety/Cake3Sluggable.Sluggable', [
+			'field' => 'username'
+		]
+	);
+	```
+* ### slug
+	Default : `slug`
+	
+	The slug field name in your database :
+	``` php
+	$this->addBehavior('Xety/Cake3Sluggable.Sluggable', [
+			'field' => 'username',
+			'slug' => 'slug_username'
+		]
+	);
+	```
+
+* ### replacement
+	Default : `-`
+	
+	The replacement characters used to replace space etc :
+	``` php
+	$this->addBehavior('Xety/Cake3Sluggable.Sluggable', [
+			'replacement' => '_'
+		]
+	);
+	```
 
 ## Contribute
 [Follow this guide to contribute](https://github.com/Xety/Cake3-Upload/blob/master/CONTRIBUTING.md)

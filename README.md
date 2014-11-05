@@ -74,4 +74,4 @@ $this->Users
 	```
 
 ## Contribute
-[Follow this guide to contribute](https://github.com/Xety/Cake3-Upload/blob/master/CONTRIBUTING.md)
+[Follow this guide to contribute](https://github.com/Xety/Cake3-Sluggable/blob/master/CONTRIBUTING.md)

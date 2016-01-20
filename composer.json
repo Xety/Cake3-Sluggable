@@ -2,7 +2,7 @@
     "name": "xety/cake3-sluggable",
     "type": "cakephp-plugin",
     "description": "A simple Cake3 plugin to slug fields and find records by slug.",
-    "keywords": ["cakephp", "cake3", "plugin", "slug", "sluggable", "fields", "records"],
+    "keywords": ["cakephp", "cake3", "plugin", "slug", "sluggable", "fields", "records", "orm"],
     "homepage": "https://github.com/Xety/Cake3-Sluggable",
     "license": "MIT",
     "support":{

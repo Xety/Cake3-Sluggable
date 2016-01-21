@@ -24,7 +24,8 @@ class SluggableBehaviorTest extends TestCase
     {
         $this->Model = TableRegistry::get('Users');
         $this->Model->addBehavior('Xety/Cake3Sluggable.Sluggable', [
-            'field' => 'username'
+            'field' => 'username',
+            'maxLength' => 5,
         ]);
     }
 
@@ -68,6 +69,9 @@ class SluggableBehaviorTest extends TestCase
         $after = $this->Model->get(1);
 
         $this->assertEquals('mariano', $before->slug);
-        $this->assertEquals('larry-page', $after->slug);
+        $this->assertEquals('larry', $after->slug);
+        
+        
+        
     }
 }

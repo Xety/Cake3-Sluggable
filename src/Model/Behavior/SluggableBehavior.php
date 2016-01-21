@@ -34,7 +34,7 @@ class SluggableBehavior extends Behavior
     {
         $config = $this->config();
         $value = $entity->get($config['field']);
-        if($config['maxLength'] > 0){
+        if ($config['maxLength'] > 0) {
             $value = Text::truncate($value, $config['maxLength'], ['ellipsis' => '', 'exact' => false]);
         }
         $entity->set($config['slug'], strtolower(Inflector::slug($value, $config['replacement'])));

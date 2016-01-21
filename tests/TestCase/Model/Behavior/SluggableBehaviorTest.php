@@ -70,8 +70,5 @@ class SluggableBehaviorTest extends TestCase
 
         $this->assertEquals('mariano', $before->slug);
         $this->assertEquals('larry', $after->slug);
-        
-        
-        
     }
 }

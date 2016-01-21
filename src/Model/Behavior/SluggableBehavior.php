@@ -6,6 +6,7 @@ use Cake\ORM\Behavior;
 use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\Utility\Inflector;
+use Cake\Utility\Text;
 
 class SluggableBehavior extends Behavior
 {
@@ -19,6 +20,7 @@ class SluggableBehavior extends Behavior
         'field' => 'title',
         'slug' => 'slug',
         'replacement' => '-',
+        'maxLength' => false,
     ];
 
     /**
@@ -32,6 +34,9 @@ class SluggableBehavior extends Behavior
     {
         $config = $this->config();
         $value = $entity->get($config['field']);
+        if($config['maxLength'] > 0){
+            $value = Text::truncate($value, $config['maxLength'], ['ellipsis' => '', 'exact' => false]);
+        }
         $entity->set($config['slug'], strtolower(Inflector::slug($value, $config['replacement'])));
     }
 
